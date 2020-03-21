@@ -91,13 +91,33 @@
           <h2>Sign Up Form</h2>
           <form class="signup">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="exampleInputFirstName">First Name</label>
+              <input type="first-name" class="form-control" id="First-name" placeholder="first-name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputLastName">Last Name</label>
+              <input type="last-name" class="form-control" id="Last-name" placeholder="last-name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail">Email address</label>
               <input type="email" class="form-control" id="email-input" placeholder="Email">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="password-input" placeholder="Password">
+              <label for="exampleInputCreatePassword">Create Password</label>
+              <input type="create-password" class="form-control" id="password-input" placeholder="Create-Password">
             </div>
+            <div class="form-group">
+              <label for="exampleInputConfirmPassword">Confirm Password</label>
+              <input type="confirm-password" class="form-control" id="password-input" placeholder="Confirm-Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPhoneNumber">10 Digit Phone Number</label>
+              <input type="phone-number" class="form-control" id="phone-number" placeholder="phone-number">
+            </div>
+
+
+
+
             <div style="display: none" id="alert" class="alert alert-danger" role="alert">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span class="sr-only">Error:</span> <span class="msg"></span>

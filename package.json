@@ -1,0 +1,38 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "## Application Requirements",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "npm-package-json-lint": "^4.6.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js",
+    "test": "npm run lint",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SheriR/Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SheriR/Project2/issues"
+  },
+  "homepage": "https://github.com/SheriR/Project2#readme"
+}

@@ -6,9 +6,9 @@ module.exports = {
         {
           email: "fake@test.com",
           password: "password",
-          first_name: "Sheri",
-          last_name: "Rhoades",
-          phone_number: "555-123-1234",
+          firstname: "Sheri",
+          lastname: "Rhoades",
+          phonenumber: "555-123-1234",
           id: 1
         }
       ],

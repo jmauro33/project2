@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+ // Getting references to our form and input
     var signUpForm = $("form.signup");
     var firstnameInput = $("input#firstname-input");
     var lastnameInput = $("input#lastname-input");
@@ -7,7 +7,7 @@ $(document).ready(function() {
     var passwordInput = $("input#password-input");
     var phonenumberInput = $("input#password-input");
   
-    
+    // When the signup button is clicked, we validate the names, email and password are not blank
     signUpForm.on("submit", function(event) {
       event.preventDefault();
       var userData = {
@@ -21,7 +21,7 @@ $(document).ready(function() {
       if (!userData.firstname || userData.lastname || userData.email || !userData.password || userData.phonenumber) {
         return;
       }
-     
+      // If we have an email and password, run the signUpUser function
       signUpUser(userData.firstname,userData.lastname,userData.email, userData.password,userData.phonenumber);
 
       firstname.val("");
@@ -31,7 +31,7 @@ $(document).ready(function() {
       phonenumber.val("");
     });
   
-    // Does a post to the signup route. If successful, we are redirected to the members page
+    // Does a post to the signup route. If successful, we are redirected to the lost pet profile page
     // Otherwise we log any errors
     function signUpUser(firstname,lastname,email,password,phonenumber) {
       $.post("/api/signup", {
@@ -42,8 +42,8 @@ $(document).ready(function() {
         phonenumber: phonenumber
       })
         .then(function(data) {
-          window.location.replace("/members");
-        
+          window.location.replace("/lostpet");
+        // If there's an error, handle it by throwing up a bootstrap alert
         })
         .catch(handleLoginErr);
     }

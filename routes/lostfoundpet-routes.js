@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // Add a new lost pet
   app.post("/api/lostpet", function(req, res) {
-    db.User.create(req.body).then(function(results) {
+    db.lostFoundPet.create(req.body).then(function(results) {
       res.json(results);
     });
   });
@@ -28,7 +28,7 @@ module.exports = function(app) {
   // Update a lost pet by id
   app.put("/api/lostpet/:id", function(req, res) {
     db.lostFoundPet
-      .update({ where: { id: req.params.id } })
+      .update(req.body, { where: { id: req.params.id } })
       .then(function(results) {
         res.json(results);
       });

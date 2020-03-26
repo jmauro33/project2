@@ -17,7 +17,6 @@ module.exports = function(app) {
 
   //find a specific pet by id
   app.get("/api/lostpet/:id", function(req, res) {
-    console.log("hit");
     db.lostFoundPet
       .findAll({ where: { id: req.params.id } })
       .then(function(results) {

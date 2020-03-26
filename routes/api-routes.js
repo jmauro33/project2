@@ -27,27 +27,6 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
-
-  // var User = {
-  //   email: req.body.email - input,
-  //   password: req.body.password - input,
-  //   first_name: req.body.First - name,
-  //   last_name: req.body.Last - name,
-  //   phone_number: req.body.phone - number
-  // };
-
-  //   db.User.create(user)
-  //     .then(function(res) {
-  //       console.log("Success");
-  //       //res.redirect(307, "/api/login");
-  //     })
-  //     .catch(function(err) {
-  //       console.log(err);
-  //       res.json(err);
-  //       // res.status(422).json(err.errors[0].message);
-  //     });
-  // });
-
   //
   // Route for logging user out
   app.get("/logout", function(req, res) {

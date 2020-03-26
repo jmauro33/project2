@@ -17,21 +17,21 @@ module.exports = function(sequelize, Sequelize, DataTypes) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    first_name: {
+    firstname: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         len: [1, 255]
       }
     },
-    last_name: {
+    lastname: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
         len: [1, 255]
       }
     },
-    phone_number: {
+    phonenumber: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {

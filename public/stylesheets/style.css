@@ -1,10 +1,10 @@
 .form-input {
-    background-color: cornflowerblue;
-    border: black 1px solid;
-    text-align: center;
-    display: inline-block;
-    width: 65%;
-    margin-left: 100px;
-    margin-right: 100pxgi;
-    padding:10%;
+  background-color: darkgrey;
+  border: black 1px solid;
+  text-align: center;
+  display: inline-block;
+  width: 65%;
+  margin-left: 100px;
+  margin-right: 100pxgi;
+  padding: 10%;
 }

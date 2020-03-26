@@ -18,9 +18,8 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.User.create(req.body)
-      .then(function(res) {
-        console.log("Success");
-        //res.redirect(307, "/api/login");
+      .then(function() {
+        res.redirect(307, "/api/login");
       })
       .catch(function(err) {
         console.log(err);
@@ -28,7 +27,6 @@ module.exports = function(app) {
         // res.status(422).json(err.errors[0].message);
       });
   });
-
   //
   // Route for logging user out
   app.get("/logout", function(req, res) {

@@ -8,25 +8,29 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Project2 - My Buddy Finder</title>
-    <!-- Bootstrap core CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!-- Custom styles for this template -->
-    <link href="" rel="stylesheet" />
-  </head>
+    <title>My Buddy Finder-lost pet page</title>
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+    <link href="./stylesheets/style.css" rel="stylesheet">
 
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      #map{
+          height: 500px;
+          width: 500px;
+      }
+  </style>
+    </head>
 
-
-<!-- Custom styles for this template -->
-<link href="" rel="stylesheet" />
-</head>
 <body>
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#"></a>
@@ -50,55 +54,227 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lost a Pet</a>
+          <a class="nav-link" href="./lostpet.html">Lost a Pet?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Found a Pet</a>
+          <a class="nav-link" href="#">Found a Pet?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Search Lost & Found Pets</a>
+          <a class="nav-link" href="">Search Lost & Found Pets</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<header class="bg-primary py-5 mb-5">
-  <div class="container h-100">
+<header class="bg-primary py-5">
+  <div class="container h-100" id=titlecontainer>
     <div class="row h-100 align-items-center">
       <div class="col-lg-12">
         <h1 class="display-4 text-white mt-5 mb-2">
           My Buddy Finder
         </h1>
-        <p class="lead mb-5 text-white-50">
-          With My Buddy Finder you Would help reunite someone find a long lost buddy of theirs.
-        </p>
+        <p class="lead mb-5 text-white">
+          My Buddy Finder is a project dedicated to helping pet-owners
+          reunite with their lost pets.
+        </p>        
       </div>
     </div>
   </div>
-</header>
+</header>   
+    
+  <!-- Main Container-->
+  <div class="main main-raised">
+    <div class="jumbotron">
+      <div class="section text-center">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+              <h2 class="title">Lost Pet Form:</h2>                        
+          </div>
+        </div>
+        <br>
+        <!-- Cat or Dog or Other-->
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile-tabs">
+              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                <li class="nav-item" id="first">
+                  <a class="nav-link dog-icon" role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                    <i class="fas fa-dog"></i> Dog
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link cat-icon"  role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                    <i class="fas fa-cat"></i> Cat
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link paw-icon"  role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                    <i class="fas fa-paw"></i></i> Other
+                  </a>
+                </li>
+               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content tab-space">
+          <div class="tab-pane active text-center gallery" id="studio">
+            <div class="row">
+              <div class="section section-contacts">
+                <div class="row lost-form">
+                  <div class="col-md-10 ml-auto mr-auto">
+                    <h4 class="text-center description">Fill out the form below with information for your lost pet.</h4>
+                    <!--Lost Pet Criteria-->
+                    <form class="contact-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Pet Name</label>
+                            <input type="text" class="form-control pet-name" required>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Pet Breed</label>
+                            <input type="text" class="form-control pet-type" required>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Pet Color</label>
+                            <input type="text" class="form-control color" required>
+                          </div>
+                        </div>
+                      </div> <!--End of First Row-->                     
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Sex</label>                    
+                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7" required> 
+                              <option disabled selected value="sex" class="sex"></option>
+                              <option class="male">Male</option>
+                              <option class="female">Female</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Age</label>
+                            <input type="number" class="form-control age" required>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group selectpicker">
+                            <label class="label-control"></label>
+                            <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
+                          </div>
+                        </div>
+                      </div><!--End of Second Row-->
 
-<body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+                      <!--Photo upload-->
+                      <div class="row upload">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Image URL</label>
+                            <input type="text" id="photo" class="form-control" required>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <br>
+                      
+                      <div class="main main-raised">
+                        <div class="jumbotron">
+                          <div class="section text-center">
+                            <h2 class="title lost">Lost Location:</h2>
+                            <h5 class="description"></h5>Click on the map where the pet was lost. Then click "submit".
+                          </div>
+                          <div id="map"></div>
+        
+        <script>
+            function initMap(){
+                var location = {lat: 39.195040, lng: -94.682370};
+                var map = new google.maps.Map(document.getElementById("map"),{
+                    zoom: 8, 
+                    center: location
+                });
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0yxrfajz4Icvg5k05gAtiwc3BqKFzjWQ&callback=initMap"></script>
+
+                          <div class="container map-container rounded">
+                            <div id="map"></div>
+                          </div>
+                          <br> 
+                        </div>
+                      </div>
+                      <input class="btn btn-primary btn-raised btn-lg submit" type="submit"></input>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Found Pets <span class="lostpet-name"></span></h2>
+  </div><!-- End Of Container Div-->
+
+  <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title"><strong>Success! Your Pet was added.</strong></h3>
+          </div>
+          <div class="modal-body">
+            <img id="img" src="" alt="">
+            <br>  
+            Pet Name: <h4 class="name"><strong>Pet Name:</strong></h4>
+            Date Lost: <h4 class="date_lost">Date Lost:<strong></strong></h4>
+            Location: <h4 class="location"><strong></strong></h4>  
+          </div>
+          <script type="text/javascript">
+            function pageRedirect() {
+              window.location.href = "/map-results.html";
+            }      
+          </script> 
+          <div class="modal-footer">
+              <button type="button" onclick="pageRedirect()" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+          </div>
       </div>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/lostpet.js.js"></script>
-
+  
+  <!--Footer-->
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="https://github.com/SheriR/Project2">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, My Buddy Finder.... for pet lover's everwhere.
+      </div>
+    </div>
+  </footer>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/signup.js"></script>
 </body>
 
 </html>

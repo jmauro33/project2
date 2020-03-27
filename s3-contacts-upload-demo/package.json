@@ -1,0 +1,14 @@
+{
+  "name": "s3-contacts-upload-demo",
+  "version": "1.0.0",
+  "description": "Nodejs app for uploading file to s3",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "ARMills21",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.647.0"
+  }
+}

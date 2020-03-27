@@ -1,34 +1,33 @@
 .form-input {
-    background-color: cornflowerblue;
-    border: black 1px solid;
-    text-align: center;
-    display: inline-block;
-    width: 65%;
-    margin-left: 150px;
-    margin-right: 150px;
-    padding: 10%;
-    padding-left: 100px;
-    padding-right: 100px;
+  background-color: cornflowerblue;
+  border: black 1px solid;
+  text-align: center;
+  display: inline-block;
+  width: 65%;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 10%;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
+/*
 .form-group {
-
-    text-align:center;
-   
+  text-align: center;
 }
-
+/*
+/*  
 .row {
-
     display: inline-block;
-
-
-}
-
+} */
 
 .container {
-
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#petcontainer {
+  padding: 2rem;
+  background-color: lightgray;
+}

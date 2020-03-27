@@ -1,17 +1,19 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
-  var firstnameInput = $("input#firstname-input");
-  var lastnameInput = $("input#lastname-input");
-  var emailInput = $("input#email-input");
+
+  var signUpbtn = document.getElementById("signupbtn");
+  var firstnameInput = $("input#first-name");
+  var lastnameInput = $("input#last-name");
+  var emailInput = $("input#email-address-input");
   var passwordInput = $("input#password-input");
-  var phonenumberInput = $("input#password-input");
+  var phonenumberInput = $("input#phone-number-input");
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  signUpForm.on("submit", function(event) {
+  signUpbtn.addEventListener("click", function(event) {
+    console.log("SIGNUP CLICKED");
     event.preventDefault();
-    console.log(firstnameInput);
+
     var userData = {
       firstname: firstnameInput.val().trim(),
       lastname: lastnameInput.val().trim(),
@@ -20,22 +22,32 @@ $(document).ready(function() {
       phonenumber: phonenumberInput.val().trim()
     };
 
-    if (!userData.firstname || userData.lastname || userData.email || !userData.password || userData.phonenumber) {
+    console.log("USERDATA:" + userData);
+
+    if (
+      !userData.firstname ||
+      !userData.lastname ||
+      !userData.email ||
+      !userData.password ||
+      !userData.phonenumber
+    ) {
+      console.log("MISSING DATA");
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.firstname,userData.lastname,userData.email, userData.password,userData.phonenumber);
-
-    userData.firstname.val("");
-    userData.lastname.val("");
-    userData.email.val("");
-    userData.password.val("");
-    userData.phonenumber.val("");
+    signUpUser(
+      userData.firstname,
+      userData.lastname,
+      userData.email,
+      userData.password,
+      userData.phonenumber
+    );
   });
 
   // Does a post to the signup route. If successful, we are redirected to the lost pet profile page
   // Otherwise we log any errors
-  function signUpUser(firstname,lastname,email,password,phonenumber) {
+  function signUpUser(firstname, lastname, email, password, phonenumber) {
+    console.log("SIGNUPUSER");
     $.post("/api/signup", {
       firstname: firstname,
       lastname: lastname,
@@ -43,9 +55,10 @@ $(document).ready(function() {
       password: password,
       phonenumber: phonenumber
     })
-      .then(function() {
-        window.location.replace("/lostpet");
-      // If there's an error, handle it by throwing up a bootstrap alert
+      .then(function(response) {
+        window.location.replace("/addlostpet.html");
+        console.log(response, "hello");
+        // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }

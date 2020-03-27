@@ -9,16 +9,43 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(firstname, lastname, email, password, phonenumber) {
-  $.post("/api/signup", {
-      firstnameInput: firstname,
-      lastnameInput: lastname,
-      emailInput: email,
-      passwordInput: password,
-      phonenumberInput: phonenumber
+  signUpForm.on("submit", function(event) {
+    event.preventDefault();
+    console.log(firstnameInput);
+    var userData = {
+      firstname: firstnameInput.val().trim(),
+      lastname: lastnameInput.val().trim(),
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim(),
+      phonenumber: phonenumberInput.val().trim()
+    };
+
+    if (!userData.firstname || userData.lastname || userData.email || !userData.password || userData.phonenumber) {
+      return;
+    }
+    // If we have an email and password, run the signUpUser function
+    signUpUser(userData.firstname,userData.lastname,userData.email, userData.password,userData.phonenumber);
+
+    userData.firstname.val("");
+    userData.lastname.val("");
+    userData.email.val("");
+    userData.password.val("");
+    userData.phonenumber.val("");
+  });
+
+  // Does a post to the signup route. If successful, we are redirected to the lost pet profile page
+  // Otherwise we log any errors
+  function signUpUser(firstname,lastname,email,password,phonenumber) {
+    $.post("/api/signup", {
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      password: password,
+      phonenumber: phonenumber
     })
-      .then(function (data) {
+      .then(function() {
         window.location.replace("/lostpet");
+      // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }

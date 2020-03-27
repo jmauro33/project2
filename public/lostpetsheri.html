@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
     <link href="./stylesheets/style.css" rel="stylesheet">
+
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      #map{
+          height: 500px;
+          width: 500px;
+      }
+  </style>
     </head>
 
 <body>
@@ -177,6 +188,24 @@
                             <h2 class="title lost">Lost Location:</h2>
                             <h5 class="description"></h5>Click on the map where the pet was lost. Then click "submit".
                           </div>
+                          <div id="map"></div>
+        
+        <script>
+            function initMap(){
+                var location = {lat: 39.195040, lng: -94.682370};
+                var map = new google.maps.Map(document.getElementById("map"),{
+                    zoom: 8, 
+                    center: location
+                });
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0yxrfajz4Icvg5k05gAtiwc3BqKFzjWQ&callback=initMap"></script>
+
                           <div class="container map-container rounded">
                             <div id="map"></div>
                           </div>

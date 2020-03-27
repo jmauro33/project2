@@ -54,10 +54,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./lostpet.html">Lost a Pet?</a>
+          <a class="nav-link" href="./addlostpet.html">Lost a Pet?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Found a Pet?</a>
+          <a class="nav-link" href="./foundpet.html">Found a Pet?</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="">Search Lost & Found Pets</a>
@@ -92,32 +92,9 @@
           </div>
         </div>
         <br>
-        <!-- Cat or Dog or Other-->
-        <div class="row">
-          <div class="col-md-6 ml-auto mr-auto">
-            <div class="profile-tabs">
-              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                <li class="nav-item" id="first">
-                  <a class="nav-link dog-icon" role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
-                    <i class="fas fa-dog"></i> Dog
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link cat-icon"  role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
-                    <i class="fas fa-cat"></i> Cat
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link paw-icon"  role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
-                    <i class="fas fa-paw"></i></i> Other
-                  </a>
-                </li>
-               </ul>
-            </div>
-          </div>
-        </div>
+                
         <div class="tab-content tab-space">
-          <div class="tab-pane active text-center gallery" id="studio">
+          <div class="tab-pane active text-center gallery">
             <div class="row">
               <div class="section section-contacts">
                 <div class="row lost-form">
@@ -134,19 +111,30 @@
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Pet Breed</label>
-                            <input type="text" class="form-control pet-type" required>
+                            <label class="bmd-label-floating">Pet Type</label>                    
+                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7" required> 
+                              <option disabled selected value="sex" class="sex"></option>
+                              <option class="dog">Dog</option>
+                              <option class="cat">Cat</option>
+                              <option class="other">Other</option>
+                            </select>
                           </div>
                         </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Description</label>
+                            <input type="text" class="form-control description" required>
+                          </div>
+                          </div>
+                        </div> <!--End of First Row-->
+
+                        <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Color</label>
                             <input type="text" class="form-control color" required>
                           </div>
-                        </div>
-                      </div> <!--End of First Row--> 
-                      </form>                    
-                      <div class="row">
+                        </div>                      
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Sex</label>                    
@@ -161,40 +149,39 @@
                           <div class="form-group selectpicker">
                             <label class="label-control"></label>
                             <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
-                          </div>
+                          </div>                                                                      
                         </div>
+                      </div>
                       </div><!--End of Second Row-->
 
-                      <!--Photo upload-->
+                      <!--Photo-->
                       <div class="row upload">
-                        <div class="col-md-4">
+                        <div class="col-md-4">                        
                           <div class="form-group">
                             <label class="bmd-label-floating">Image URL</label>
                             <input type="text" id="photo" class="form-control" required>
                           </div>
-                        </div>
+                        </div>                                                                  
+                      <div class="col-md-4">  
+                        <div class="form-group">
+                        <label class="bmd-label-floating">Address last seen</label>
+                            <input type="text" class="form-control color" required>
+                        </div>   
+                      </div>  
+                      <div class="col-md-4">
+                      <input class="btn btn-primary btn-raised btn-lg submit" type="submit" id=lostsubmit></input> 
                       </div>
-                      
-                      <br>
-                      
-                    <div class="row">
-                      <div class="main main-raised">
-                        <div class="jumbotron">
-                          <div class="section text-center">
-                            <h2 class="title lost">Lost Location:</h2>
-                            <h5 class="description"></h5>Pleas enter the address where the pet was lost. Then click "submit".
-                          </div>
-                          <div class="container map-container rounded">
-                            <div id="map"></div>
-                          </div>  
-                        </div>                  
-                        <input class="btn btn-primary btn-raised btn-lg submit" type="submit"></input>
-                   
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                      </div>
+                </div><!--End of Third Row-->                       
+                              
+                            
+                      <div class="container map-container rounded">
+                        <div id="map"></div>
+                      </div>  
+                        
+                       
+                                
+          
         </div>
       </div>
     </div>      

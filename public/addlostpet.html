@@ -101,18 +101,18 @@
                   <div class="col-md-10 ml-auto mr-auto">
                     <h4 class="text-center description">Fill out the form below with information of your lost pet.</h4>
                     <!--Lost Pet Criteria-->
-                    <form class="contact-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
+                    <form class="pet-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Name</label>
-                            <input type="text" class="form-control pet-name" required>
+                            <input type="text" class="form-control pet-name" id="pet-name" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Type</label>                    
-                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7" required> 
+                            <select class="form-control selectpicker required" id="pet_type" data-style="select-with-transition" title="" data-size="7" required> 
                               <option disabled selected value="sex" class="sex"></option>
                               <option class="dog">Dog</option>
                               <option class="cat">Cat</option>
@@ -123,7 +123,7 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Description</label>
-                            <input type="text" class="form-control description" required>
+                            <input type="text" class="form-control description" id="description" required>
                           </div>
                           </div>
                         </div> <!--End of First Row-->
@@ -132,13 +132,13 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Color</label>
-                            <input type="text" class="form-control color" required>
+                            <input type="text" class="form-control color" id="color" required>
                           </div>
                         </div>                      
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Sex</label>                    
-                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7" required> 
+                            <select class="form-control selectpicker required" id="sex" data-style="select-with-transition" title="" data-size="7" required> 
                               <option disabled selected value="sex" class="sex"></option>
                               <option class="male">Male</option>
                               <option class="female">Female</option>
@@ -154,35 +154,32 @@
                       </div>
                       </div><!--End of Second Row-->
 
-                      <!--Photo-->
-                      <div class="row upload">
-                        <div class="col-md-4">                        
+                      <div class="row" id="lastrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                      <label class="bmd-label-floating">Address last seen</label>
+                            <input type="text" id="lastseen"class="form-control color" required>
+                        </div>   
+                      </div>
+                          <div class="col-md-6">                  
                           <div class="form-group">
                             <label class="bmd-label-floating">Image URL</label>
-                            <input type="text" id="photo" class="form-control" required>
+                            <input type="text" id="photo" class="form-control" required>                           
                           </div>
-                        </div>                                                                  
-                      <div class="col-md-4">  
-                        <div class="form-group">
-                        <label class="bmd-label-floating">Address last seen</label>
-                            <input type="text" class="form-control color" required>
-                        </div>   
-                      </div>  
-                      <div class="col-md-4">
-                      <input class="btn btn-primary btn-raised btn-lg submit" type="submit" id=lostsubmit></input> 
+                        </div> 
+                        </div>
+                      </div><!--End of Third Row-->                                                        
+                      
+                      <div class="row">
+                      <div class="column-md-10 mx-auto">                                            
+                      <input class="btn btn-primary btn-raised btn-lg submit" type="submit" id="lostsubmitbtn"></input> 
                       </div>
-                      </div>
-                </div><!--End of Third Row-->                       
-                              
-                            
+                      </div>     
+                      <br>          
                       <div class="container map-container rounded">
                         <div id="map"></div>
-                      </div>  
-                        
-                       
-                                
-          
-        </div>
+                      </div>                    
+                    </div>
       </div>
     </div>      
             <script>
@@ -248,10 +245,12 @@
       </div>
     </div>
   </footer>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="./js/addlostpet.js"></script>
 </body>

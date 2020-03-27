@@ -4,21 +4,21 @@ module.exports = function(sequelize, Sequelize) {
       type: Sequelize.INTEGER,
       foreignKey: true
     },
-    pet_name: {
+    petname: {
       type: Sequelize.STRING,
       allowNull: true,
       validate: {
         len: [1, 255]
       }
     },
-    pet_type: {
+    pettype: {
       type: Sequelize.STRING,
       allowNull: true,
       validate: {
         len: [1, 255]
       }
     },
-    lost_location: {
+    lostlocation: {
       type: Sequelize.STRING,
       allowNull: true,
       validate: {
@@ -26,7 +26,7 @@ module.exports = function(sequelize, Sequelize) {
       }
     },
     date: {
-      type: Sequelize.DATEONLY,
+      type: Sequelize.STRING,
       allowNull: true,
       validate: {
         len: [1, 255]
@@ -53,7 +53,7 @@ module.exports = function(sequelize, Sequelize) {
         len: [1, 255]
       }
     },
-    image_link: {
+    imagelink: {
       type: Sequelize.TEXT,
       allowNull: true
     }

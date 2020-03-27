@@ -6,6 +6,8 @@ const s3 = new AWS.S3({
     secretAccessKey: "oiYX6yQ4AukBofJ5WiZZwntDSSF/rLr6a5Rl712Z"
 });
 
+AWS.config.logger = console;
+
 const fileName = '../public/img/dog1.jpg';
 
 const uploadFile = () => {
@@ -13,8 +15,8 @@ const uploadFile = () => {
      if (err) throw err;
      const params = {
          Bucket: 'buddyfinder2020', // pass your bucket name
-         Key: 'pictures.jpg', // file will be saved as buddyfinder2020/pictures.csv
-         Body: JSON.stringify(data, null, 2)
+         Key: 'pictures.jpg', // file will be saved as buddyfinder2020/pictures.jpg
+         Body: data
      };
      s3.upload(params, function(s3Err, data) {
          if (s3Err) throw s3Err

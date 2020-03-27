@@ -1,17 +1,18 @@
 $(document).ready(function() {
   // Getting references to our form and input
   var signUpForm = $("form.signup");
-  var firstnameInput = $("input#firstname-input");
-  var lastnameInput = $("input#lastname-input");
-  var emailInput = $("input#email-input");
+  var firstnameInput = $("input#first-name");
+  var lastnameInput = $("input#last-name");
+  var emailInput = $("input#email-address-input");
   var passwordInput = $("input#password-input");
-  var phonenumberInput = $("input#password-input");
+  var phonenumberInput = $("input#phone-number-input");
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  signUpForm.on("submit", function(event) {
+  signUpForm.submit("click", function(event) {
     event.preventDefault();
-    console.log(firstnameInput);
+    
+    
     var userData = {
       firstname: firstnameInput.val().trim(),
       lastname: lastnameInput.val().trim(),

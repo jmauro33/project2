@@ -2,10 +2,19 @@ env:
   browser: true
   es6: true
   node: true
+<<<<<<< HEAD
+<<<<<<< HEAD
+  jquery: true
+extends: 'eslint:recommended'
+=======
+extends: "eslint:recommended"
+>>>>>>> 3046cdee3d02b1e9f6da7f566c31d3837a7acc2d
+=======
  jquery: true
 extends: 'eslint:recommended'
 
 
+>>>>>>> c8fedb70c8954a8559ebed7df20ddf04ea5654f2
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly

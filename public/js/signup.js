@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
+
+  var signUpbtn = document.getElementById("signupbtn");
   var firstnameInput = $("input#first-name");
   var lastnameInput = $("input#last-name");
   var emailInput = $("input#email-address-input");
@@ -9,7 +10,8 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  signUpForm.submit("click", function(event) {
+  signUpbtn.addEventListener("click", function(event) {
+    console.log("SIGNUP CLICKED");
     event.preventDefault();
 
     var userData = {
@@ -20,13 +22,16 @@ $(document).ready(function() {
       phonenumber: phonenumberInput.val().trim()
     };
 
+    console.log("USERDATA:" + userData);
+
     if (
       !userData.firstname ||
-      userData.lastname ||
-      userData.email ||
+      !userData.lastname ||
+      !userData.email ||
       !userData.password ||
-      userData.phonenumber
+      !userData.phonenumber
     ) {
+      console.log("MISSING DATA");
       return;
     }
     // If we have an email and password, run the signUpUser function
@@ -37,26 +42,22 @@ $(document).ready(function() {
       userData.password,
       userData.phonenumber
     );
-
-    userData.firstname.val("");
-    userData.lastname.val("");
-    userData.email.val("");
-    userData.password.val("");
-    userData.phonenumber.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the lost pet profile page
   // Otherwise we log any errors
   function signUpUser(firstname, lastname, email, password, phonenumber) {
-    $.post("/signup", {
+    console.log("SIGNUPUSER");
+    $.post("/api/signup", {
       firstname: firstname,
       lastname: lastname,
       email: email,
       password: password,
       phonenumber: phonenumber
     })
-      .then(function() {
-        window.location.replace("/lostpet");
+      .then(function(response) {
+        window.location.replace("/addlostpet.html");
+        console.log(response, "hello");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

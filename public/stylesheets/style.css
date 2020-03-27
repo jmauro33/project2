@@ -27,5 +27,7 @@
   margin-right: auto;
 }
 
-#lostsubmit {
+#petcontainer {
+  padding: 2rem;
+  background-color: lightgray;
 }

@@ -8,7 +8,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>My Buddy Finder-lost pet page</title>
+    <title>My Buddy Finder-Found pet page</title>
   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -88,7 +88,7 @@
       <div class="section text-center">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Lost Pet Form:</h2>                        
+              <h2 class="title">Found Pet Form:</h2>                        
           </div>
         </div>
         <br>
@@ -122,8 +122,8 @@
               <div class="section section-contacts">
                 <div class="row lost-form">
                   <div class="col-md-10 ml-auto mr-auto">
-                    <h4 class="text-center description">Fill out the form below with information for your lost pet.</h4>
-                    <!--Lost Pet Criteria-->
+                    <h4 class="text-center description">Fill out the form below with information for the pet that you found so it can be returned to its owner.</h4>
+                    <!--Found Pet Criteria-->
                     <form class="contact-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
                       <div class="row">
                         <div class="col-md-4">
@@ -165,7 +165,7 @@
                         <div class="col-md-4">
                           <div class="form-group selectpicker">
                             <label class="label-control"></label>
-                            <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
+                            <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Found" onfocus="(this.type='date')"/>
                           </div>
                         </div>
                       </div><!--End of Second Row-->
@@ -185,8 +185,8 @@
                       <div class="main main-raised">
                         <div class="jumbotron">
                           <div class="section text-center">
-                            <h2 class="title lost">Lost Location:</h2>
-                            <h5 class="description"></h5>Click on the map where the pet was lost. Then click "submit".
+                            <h2 class="title found">Found Location:</h2>
+                            <h5 class="description"></h5>Click on the map where you found the pet. Then click "submit".
                           </div>
                           <div id="map"></div>
         
@@ -234,7 +234,7 @@
             <img id="img" src="" alt="">
             <br>  
             Pet Name: <h4 class="name"><strong>Pet Name:</strong></h4>
-            Date Lost: <h4 class="date_lost">Date Lost:<strong></strong></h4>
+            Date Found: <h4 class="date_found">Date Found:<strong></strong></h4>
             Location: <h4 class="location"><strong></strong></h4>  
           </div>
           <script type="text/javascript">

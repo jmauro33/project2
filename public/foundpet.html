@@ -171,23 +171,24 @@
                       </div><!--End of Second Row-->
 
                       <!--Photo upload-->
-                      <div class="row upload">
-                        <div class="col-md-4">
+                      <div class="row">
+                        <div class="col-md-6"> 
                           <div class="form-group">
-                            <label class="bmd-label-floating">Image URL</label>
-                            <input type="text" id="photo" class="form-control" required>
-                          </div>
-                        </div>
+                           <div class="row upload">          
+                             <label class="bmd-label-floating">Choose an Image</label>
+                             <form action="upload.php" method="post">
+                               <input type="file" name="file" id="file"/>
+                           </form>
+                           </div>
+                         </div> 
+                       </div>
+                       <div class="col-md-6">  
+                        <div class="form-group">
+                        <label class="bmd-label-floating">Address last seen</label>
+                            <input type="text" id="lastseen" class="form-control color" required>
+                        </div>   
                       </div>
-                      
-                      <br>
-                      
-                      <div class="main main-raised">
-                        <div class="jumbotron">
-                          <div class="section text-center">
-                            <h2 class="title found">Found Location:</h2>
-                            <h5 class="description"></h5>Click on the map where you found the pet. Then click "submit".
-                          </div>
+                      </div>
                           <div id="map"></div>
         
         <script>

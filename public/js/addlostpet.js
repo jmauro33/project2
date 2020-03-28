@@ -73,7 +73,7 @@ $(document).ready(function() {
       imagelink: imagelink
     })
       .then(function(response) {
-        // window.location.replace("/members.html");
+        Window.location.replace("/members.html");
         console.log(response, "added lost pet");
       })
       .catch(handleAddedErr);

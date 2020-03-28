@@ -155,8 +155,10 @@
                        <div class="col-md-6"> 
                          <div class="form-group">
                           <div class="row upload">          
-                            <label class="bmd-label-floating">Image URL</label>
-                            <input type="text" id="photo" class="form-control" required>
+                            <label class="bmd-label-floating">Choose an Image</label>
+                            <form action="upload.php" method="post">
+                              <input type="file" name="file" id="file"/>
+                          </form>
                           </div>
                         </div> 
                       </div>                                                                 

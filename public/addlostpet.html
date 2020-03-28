@@ -8,7 +8,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>My Buddy Finder-lost pet page</title>
+    <title>My Buddy Finder-Add lost pet</title>
   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -33,34 +33,32 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"></a>
-    <button
+     <button
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
       data-target="#navbarResponsive"
       aria-controls="navbarResponsive"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link active" href="addlostpet.html">Lost a Pet?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./addlostpet.html">Lost a Pet?</a>
+          <a class="nav-link" href="foundpet.html">Found a Pet?</a>
+        </li>      
+        <li class="nav-item">
+          <a class="nav-link" href="viewpets.html">View Pets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./foundpet.html">Found a Pet?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Search Lost & Found Pets</a>
+            <a class="nav-link" href="login.html">Login</a>
         </li>
       </ul>
     </div>
@@ -102,14 +100,14 @@
                     <h4 class="text-center description">Fill out the form below with information of your lost pet.</h4>
                     <!--Lost Pet Criteria-->
                     <form class="pet-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
-                      <div class="row">
+                    <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Name</label>
                             <input type="text" class="form-control pet-name" id="pet-name" required>
                           </div>
-                        </div>
-                        <div class="col-md-4">
+                        </div>                        
+                        <div class="col-md-4">                          
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Type</label>                    
                             <select class="form-control selectpicker required" id="pet_type" data-style="select-with-transition" title="" data-size="7" required> 
@@ -120,14 +118,14 @@
                             </select>
                           </div>
                         </div>
-                        <div class="col-md-4">
+                                           
+                      <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Description</label>
                             <input type="text" class="form-control description" id="description" required>
                           </div>
                           </div>
-                        </div> <!--End of First Row-->
-
+                        </div>   <!--End of First Row-->                 
                         <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
@@ -144,31 +142,31 @@
                               <option class="female">Female</option>
                             </select>
                           </div>
-                        </div>
-                       <div class="col-md-4">
+                        </div>                                          
+                        <div class="col-md-4">
                           <div class="form-group selectpicker">
                             <label class="label-control"></label>
                             <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
                           </div>                                                                      
-                        </div>
-                      </div>
-                      </div><!--End of Second Row-->
-
-                      <div class="row" id="lastrow">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                      <label class="bmd-label-floating">Address last seen</label>
-                            <input type="text" id="lastseen"class="form-control color" required>
-                        </div>   
-                      </div>
-                          <div class="col-md-6">                  
-                          <div class="form-group">
+                        </div>  
+                      </div><!--End of Second Row-->                  
+                      <!--Photo-->
+                      <div class="row">
+                       <div class="col-md-6"> 
+                         <div class="form-group">
+                          <div class="row upload">          
                             <label class="bmd-label-floating">Image URL</label>
-                            <input type="text" id="photo" class="form-control" required>                           
+                            <input type="text" id="photo" class="form-control" required>
                           </div>
                         </div> 
-                        </div>
-                      </div><!--End of Third Row-->                                                        
+                      </div>                                                                 
+                      <div class="col-md-6">  
+                        <div class="form-group">
+                        <label class="bmd-label-floating">Address last seen</label>
+                            <input type="text" id="lastseen" class="form-control color" required>
+                        </div>   
+                      </div>
+                      </div><!--End of Third Row-->                                                                                                 
                       
                       <div class="row">
                       <div class="column-md-10 mx-auto">                                            
@@ -245,7 +243,7 @@
       </div>
     </div>
   </footer>
-script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

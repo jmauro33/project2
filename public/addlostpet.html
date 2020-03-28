@@ -102,12 +102,19 @@
                     <form class="pet-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data">
                       <div class="row">
                         <div class="col-md-4">
-                          <div class="form-group">
+                          <div class="form">
                             <label class="bmd-label-floating">Pet Name</label>
                             <input type="text" class="form-control pet-name" id="pet-name" required>
                           </div>
                         </div>
                         <div class="col-md-4">
+                          <div class="form">
+                            <label class="bmd-label-floating">Pet Breed</label>
+                            <input type="text" class="form-control pet-type" required>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Type</label>                    
                             <select class="form-control selectpicker required" id="pet_type" data-style="select-with-transition" title="" data-size="7" required> 
@@ -134,7 +141,7 @@
                           </div>
                         </div>                      
                         <div class="col-md-4">
-                          <div class="form-group">
+                          <div class="form">
                             <label class="bmd-label-floating">Sex</label>                    
                             <select class="form-control selectpicker required" id="sex" data-style="select-with-transition" title="" data-size="7" required> 
                               <option disabled selected value="sex" class="sex"></option>
@@ -143,8 +150,19 @@
                             </select>
                           </div>
                         </div>
+<<<<<<< HEAD:public/lostpetsheri.html
+                        <div class="col-md-4">
+                          <div class="form">
+                            <label class="bmd-label-floating">Age</label>
+                            <input type="number" class="form-control age" required>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form selectpicker">
+=======
                        <div class="col-md-4">
                           <div class="form-group selectpicker">
+>>>>>>> 5b478bdacea682dc3c785ea23760544d0d899c78:public/addlostpet.html
                             <label class="label-control"></label>
                             <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
                           </div>                                                                      
@@ -152,11 +170,31 @@
                       </div>
                       </div><!--End of Second Row-->
 
+<<<<<<< HEAD
+                      <!--Photo-->
+                      <div class="row upload">
+<<<<<<< HEAD:public/lostpetsheri.html
+                        <div class="col-md-4">
+                          <div class="form">
+=======
+                        <div class="col-md-4">                        
+                          <div class="form-group">
+>>>>>>> 5b478bdacea682dc3c785ea23760544d0d899c78:public/addlostpet.html
+                            <label class="bmd-label-floating">Image URL</label>
+                            <input type="text" id="photo" class="form-control" required>
+                          </div>
+                        </div>                                                                  
+                      <div class="col-md-4">  
+                        <div class="form-group">
+                        <label class="bmd-label-floating">Address last seen</label>
+                            <input type="text" class="form-control color" required>
+=======
                       <div class="row" id="lastrow">
                         <div class="col-md-6">
                           <div class="form-group">
                       <label class="bmd-label-floating">Address last seen</label>
                             <input type="text" id="lastseen"class="form-control color" required>
+>>>>>>> 4d117e0fe09b0c7c1cb29c472bbc1526ee7753dc
                         </div>   
                       </div>
                           <div class="col-md-6">                  

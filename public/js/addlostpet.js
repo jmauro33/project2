@@ -1,62 +1,85 @@
 $(document).ready(function() {
-  $(".submit").on("click", function(event) {
+  var lostsubmitbtn = document.getElementById("lostsubmitbtn");
+  var petname = document.getElementById("pet-name");
+  var pettype = document.getElementById("pet_type");
+  var description = document.getElementById("description");
+  var color = document.getElementById("color");
+  var sex = document.getElementById("sex");
+  var date = document.getElementById("date-lost");
+  var lostlocation = document.getElementById("lastseen");
+  var imagelink = document.getElementById("photo");
+
+  lostsubmitbtn.addEventListener("click", function(event) {
+    console.log("Lost button clicked"); //this is logging
     event.preventDefault();
 
     var lostPet = {
-      pet_name: $(".pet-name")
-        .val()
-        .trim(),
-      pet_type: $(".pet_type")
-        .val()
-        .trim(),
-
-      //lost_location: address,                ,
-      date: $("#date-lost")
-        .val()
-        .trim(),
-      description: $(".description")
-        .val()
-        .trim(),
-      //type: clickedIcon,
-      color: $(".color")
-        .val()
-        .trim(),
-      sex: $(".sex")
-        .val()
-        .trim(),
-      image_link: $("#photo")
-        .val()
-        .trim()
-      //Address:
+      petname: petname.value,
+      pettype: pettype.value,
+      description: description.value,
+      color: color.value,
+      sex: sex.value,
+      date: date.value,
+      lostlocation: lostlocation.value,
+      imagelink: imagelink.value
     };
 
-    $.post("/api/lostpet", lostPet, function(data) {
-      $(".name").text(data.pet_name);
-      $("#img").attr("src", data.image_link);
-      $(".date_lost").text(data.date);
-      $(".location").text(data.lost_location);
-      $("#results-modal").modal("toggle");
-    });
+    console.log(lostPet);
+    console.log("lostPetdata");
 
-    // Send the POST request.
-    $.ajax("/api/lostpet/", {
-      type: "POST",
-      data: lostPet
-    }).then(function() {
-      console.log("created lost pet");
-      // Reload the page to get the updated list
-      location.reload();
-    });
+    if (
+      !lostPet.petname ||
+      !lostPet.pettype ||
+      !lostPet.description ||
+      !lostPet.color ||
+      !lostPet.sex ||
+      !lostPet.date ||
+      !lostPet.lostlocation ||
+      !lostPet.imagelink
+    ) {
+      console.log("MISSING Pet DATA");
+      return;
+    }
+    enterlostpet(
+      lostPet.petname,
+      lostPet.pettype,
+      lostPet.description,
+      lostPet.petcolor,
+      lostPet.petsex,
+      lostPet.datelastseen,
+      lostPet.lostlocation
+    );
   });
+
+  function enterlostpet(
+    petname,
+    pettype,
+    description,
+    petcolor,
+    petsex,
+    datelastseen,
+    lostlocation,
+    imagelink
+  ) {
+    console.log("lost pet entered");
+    $.post("api/lostpet", {
+      petname: petname,
+      pettype: pettype,
+      description: description,
+      petcolor: petcolor,
+      petsex: petsex,
+      datelastseen: datelastseen,
+      lostlocation: lostlocation,
+      imagelink: imagelink
+    })
+      .then(function(response) {
+        // window.location.replace("/members.html");
+        console.log(response, "added lost pet");
+      })
+      .catch(handleAddedErr);
+  }
+  function handleAddedErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
+  }
 });
-// } else {
-//     console.log("empty fields");
-//     if ($(".pet-name").val() == "") {
-//         alert(" Please enter the pet name.");
-//     } else if (clickedIcon == "") {
-//         // dog.value == "" && cat.value == ""
-//         alert(" Please select the pet type");
-//     } else {
-//         alert("Please enter location");
-//     }
-// }

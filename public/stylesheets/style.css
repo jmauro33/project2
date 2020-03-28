@@ -31,3 +31,12 @@
   padding: 2rem;
   background-color: lightgray;
 }
+
+#lastrow {
+  margin-left: 5.5rem;
+}
+
+#lastseen {
+  width: 27rem;
+  margin-right: 15rem;
+}

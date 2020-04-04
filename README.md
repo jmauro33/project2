@@ -1,55 +1,28 @@
 # Project 2
 
-## Application Requirements
+## Concept
 
-* Must use a Node and Express server
+Our team wanted to create an app that would help reunite pets with their owners. My Buddy Finder would allow pet-owners to search a database for pets they have lost. It would also allow them to add their pet to the database.  
+Additionally, persons who find pets can update the database with a photograph, description, and location for the animals they find. As pet-owners and people who are sympathetic to pet-owners who lose pets, we want to increase the rate at which pet-owners recover their lost pets.
 
-* Must be backed by a MySQL database and ***SEQUELIZE***
+## User Story
 
-* Must utilize both GET and POST routes for retrieving and adding new data
+When I lose my pet, I will have a resource to help me find them.
 
-* Must be deployed using Heroku (with data)
+## Technologies used
 
-* Must utilize at least one new third-party JAVASCRIPT LIBRARY, NODE MODULE, OR API
+- Front-End
+- HTML5
+- CSS
+- JavaScript
+- Bootstrap
+- Back-End
+- MySQL Database
+- Sequelize
+- Node.js
+- Express
+- Amazon S3 Buckets
 
-* Must have a polished UI
+# Deployment
 
-* Must follow MVC paradigm
-
-* Must meet good quality coding standards (indentation, scoping, naming)
-
-## Presentation Requirements
-
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to to the deployed application and the GitHub repository
-
-
-## Grading Metrics 
-
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    |
-| Design        | 20%    |
-| Functionality | 30%    |
-| Collaboration | 30%    |
-| Presentation  | 10%    |
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
+Heroku

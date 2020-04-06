@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var lostsubmitbtn = document.getElementById("lostsubmitbtn");
   var petname = document.getElementById("pet-name");
   var pettype = document.getElementById("pet_type");
@@ -9,7 +9,7 @@ $(document).ready(function() {
   var lostlocation = document.getElementById("lastseen");
   var imagelink = document.getElementById("photo");
 
-  lostsubmitbtn.addEventListener("click", function(event) {
+  lostsubmitbtn.addEventListener("click", function (event) {
     console.log("Lost button clicked"); //this is logging
     event.preventDefault();
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
       sex: sex.value,
       date: date.value,
       lostlocation: lostlocation.value,
-      imagelink: imagelink.value
+      imagelink: imagelink.value,
     };
 
     console.log(lostPet);
@@ -47,7 +47,8 @@ $(document).ready(function() {
       lostPet.petcolor,
       lostPet.petsex,
       lostPet.datelastseen,
-      lostPet.lostlocation
+      lostPet.lostlocation,
+      lostPet.imagelink
     );
   });
 
@@ -70,9 +71,9 @@ $(document).ready(function() {
       petsex: petsex,
       datelastseen: datelastseen,
       lostlocation: lostlocation,
-      imagelink: imagelink
+      imagelink: imagelink,
     })
-      .then(function(response) {
+      .then(function (response) {
         location.reload();
         console.log(response, "added lost pet");
       })

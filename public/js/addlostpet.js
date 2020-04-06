@@ -7,7 +7,7 @@ $(document).ready(function () {
   var sex = document.getElementById("sex");
   var date = document.getElementById("date-lost");
   var lostlocation = document.getElementById("lastseen");
-  var imagelink = document.getElementById("photo");
+  var imagelink = document.getElementById("imagelink");
 
   lostsubmitbtn.addEventListener("click", function (event) {
     console.log("Lost button clicked"); //this is logging

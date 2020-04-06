@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting references to our form and input
 
   var signUpbtn = document.getElementById("signupbtn");
@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  signUpbtn.addEventListener("click", function(event) {
+  signUpbtn.addEventListener("click", function (event) {
     console.log("SIGNUP CLICKED");
     event.preventDefault();
 
@@ -19,7 +19,7 @@ $(document).ready(function() {
       lastname: lastnameInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
-      phonenumber: phonenumberInput.val().trim()
+      phonenumber: phonenumberInput.val().trim(),
     };
 
     console.log("USERDATA:" + userData);
@@ -53,9 +53,10 @@ $(document).ready(function() {
       lastname: lastname,
       email: email,
       password: password,
-      phonenumber: phonenumber
+      phonenumber: phonenumber,
     })
-      .then(function(response) {
+
+      .then(function (response) {
         window.location.replace("/addlostpet.html");
         console.log(response, "hello");
         // If there's an error, handle it by throwing up a bootstrap alert

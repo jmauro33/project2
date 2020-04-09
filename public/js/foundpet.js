@@ -1,13 +1,13 @@
 $(document).ready(function() {
   var foundsubmitbtn = document.getElementById("foundsubmitbtn");
   var petname = document.querySelector("pet-name");
-  var pettype = document.getElementById("pet_type");
-  var description = document.getElementById("description");
-  var color = document.getElementById("color");
-  var sex = document.getElementById("sex");
-  var date = document.getElementById("date-found");
-  var foundlocation = document.getElementById("lastseen");
-  var imagelink = document.getElementById("photo");
+  var pettype = document.querySelector("pet_type");
+  var description = document.querySelector("description");
+  var color = document.querySelector("color");
+  var sex = document.querySelector("sex");
+  var date = document.querySelector("date-found");
+  var foundlocation = document.querySelector("lastseen");
+  var imagelink = document.querySelector("photo");
 
   foundsubmitbtn.addEventListener("click", function(event) {
     console.log("found button clicked"); //this is logging

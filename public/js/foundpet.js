@@ -1,17 +1,33 @@
 $(document).ready(function() {
   var foundsubmitbtn = document.getElementById("foundsubmitbtn");
-  var petname = document.querySelector("pet-name");
-  var pettype = document.querySelector("pet_type");
+  var petname = document.getElementById("pet-name");
+  var pettype = document.getElementById("pet-type");
   var description = document.querySelector("description");
   var color = document.querySelector("color");
   var sex = document.querySelector("sex");
   var date = document.querySelector("date-found");
   var foundlocation = document.querySelector("lastseen");
   var imagelink = document.querySelector("photo");
+  console.log(petname);
+  console.log(pettype);
+  console.log(description);
+  console.log(color);
+  console.log(sex);
+  console.log(date);
+  console.log(foundlocation);
+  console.log(imagelink);
 
   foundsubmitbtn.addEventListener("click", function(event) {
     console.log("found button clicked"); //this is logging
     event.preventDefault();
+    console.log(petname);
+    console.log(pettype);
+    console.log(description);
+    console.log(color);
+    console.log(sex);
+    console.log(date);
+    console.log(foundlocation);
+    console.log(imagelink);
 
     var foundPet = {
       petname: petname.value,

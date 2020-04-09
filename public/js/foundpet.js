@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var foundsubmitbtn = document.getElementById("foundsubmitbtn");
-  var petname = document.getElementById("pet-name");
+  var petname = document.querySelector("pet-name");
   var pettype = document.getElementById("pet_type");
   var description = document.getElementById("description");
   var color = document.getElementById("color");

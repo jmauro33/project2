@@ -1,22 +1,35 @@
 $(document).ready(function() {
   var foundsubmitbtn = document.getElementById("foundsubmitbtn");
   var petname = document.getElementById("pet-name");
-  var pettype = document.getElementById("pet_type");
-  var description = document.getElementById("description");
+  var pettype = document.getElementById("pet-type");
   var color = document.getElementById("color");
   var sex = document.getElementById("sex");
   var date = document.getElementById("date-found");
   var foundlocation = document.getElementById("lastseen");
-  var imagelink = document.getElementById("photo");
+  var imagelink = document.getElementById("file");
+  console.log(petname);
+  console.log(pettype);
+
+  console.log(color);
+  console.log(sex);
+  console.log(date);
+  console.log(foundlocation);
+  console.log(imagelink);
 
   foundsubmitbtn.addEventListener("click", function(event) {
     console.log("found button clicked"); //this is logging
     event.preventDefault();
+    console.log(petname);
+    console.log(pettype);
+    console.log(color);
+    console.log(sex);
+    console.log(date);
+    console.log(foundlocation);
+    console.log(imagelink);
 
     var foundPet = {
       petname: petname.value,
       pettype: pettype.value,
-      description: description.value,
       color: color.value,
       sex: sex.value,
       date: date.value,
@@ -30,7 +43,6 @@ $(document).ready(function() {
     if (
       !foundPet.petname ||
       !foundPet.pettype ||
-      !foundPet.description ||
       !foundPet.color ||
       !foundPet.sex ||
       !foundPet.date ||
@@ -43,7 +55,6 @@ $(document).ready(function() {
     enterfoundpet(
       foundPet.petname,
       foundPet.pettype,
-      foundPet.description,
       foundPet.petcolor,
       foundPet.petsex,
       foundPet.datelastseen,
@@ -54,7 +65,6 @@ $(document).ready(function() {
   function enterfoundpet(
     petname,
     pettype,
-    description,
     petcolor,
     petsex,
     datelastseen,
@@ -65,7 +75,6 @@ $(document).ready(function() {
     $.post("api/lostpet", {
       petname: petname,
       pettype: pettype,
-      description: description,
       petcolor: petcolor,
       petsex: petsex,
       datelastseen: datelastseen,

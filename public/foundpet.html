@@ -129,19 +129,19 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Name</label>
-                            <input type="text" class="form-control pet-name" required>
+                            <input type="text" class="form-control pet-name" id ="pet-name" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Breed</label>
-                            <input type="text" class="form-control pet-type" required>
+                            <input type="text" class="form-control pet-type" id = "pet-type" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Color</label>
-                            <input type="text" class="form-control color" required>
+                            <input type="text" class="form-control color" id= "color" required>
                           </div>
                         </div>
                       </div> <!--End of First Row-->                     
@@ -149,7 +149,7 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Sex</label>                    
-                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7" required> 
+                            <select class="form-control selectpicker required" id = "sex" data-style="select-with-transition" title="" data-size="7" required> 
                               <option disabled selected value="sex" class="sex"></option>
                               <option class="male">Male</option>
                               <option class="female">Female</option>
@@ -165,7 +165,7 @@
                         <div class="col-md-4">
                           <div class="form-group selectpicker">
                             <label class="label-control"></label>
-                            <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Found" onfocus="(this.type='date')"/>
+                            <input id="date-found" required="" type="text" class="form-control text-center" placeholder="Date Found" id = "date-found" onfocus="(this.type='date')"/>
                           </div>
                         </div>
                       </div><!--End of Second Row-->
@@ -213,7 +213,7 @@
                           <br> 
                         </div>
                       </div>
-                      <input class="btn btn-primary btn-raised btn-lg submit" type="submit"></input>
+                      <input id = "foundsubmitbtn" class="btn btn-primary btn-raised btn-lg submit" type="submit"></input>
                     </form>
                   </div>
                 </div>
